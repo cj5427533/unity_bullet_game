@@ -35,19 +35,19 @@ Unity로 만든 **3D 서바이벌(총알 회피) 미니게임**입니다. 회전
 
 ```mermaid
 flowchart LR
-  Input[Input System(WASD/Arrow)] --> PC[PlayerController]
-  PC --> RB[Rigidbody 이동]
+  Input["Input System<br/>WASD/Arrow"] --> PC[PlayerController]
+  PC --> RB["Rigidbody 이동"]
 
-  DM[DifficultyManager<br/>(Singleton, DontDestroyOnLoad)] --> GM[GameManager<br/>(점수/체력/페이즈/아이템 스폰)]
-  DM --> B[Bullet<br/>(속도/수명)]
+  DM["DifficultyManager<br/>Singleton<br/>DontDestroyOnLoad"] --> GM["GameManager<br/>점수/체력/페이즈<br/>아이템 스폰"]
+  DM --> B["Bullet<br/>속도/수명"]
 
-  BS[BulletSpawner<br/>(회전 + 발사)] --> B
-  B -->|OnTriggerEnter| GM
+  BS["BulletSpawner<br/>회전 + 발사"] --> B
+  B -->|"OnTriggerEnter"| GM
 
-  IM[ItemManager<br/>(Health/Invincibility/Score)] -->|OnTriggerEnter| GM
-  GM --> UI[Unity UI + TMP<br/>(점수/시간/체력/알림)]
+  IM["ItemManager<br/>Health/Invincibility/Score"] -->|"OnTriggerEnter"| GM
+  GM --> UI["Unity UI + TMP<br/>점수/시간/체력/알림"]
 
-  BTN[StartButtonHandler] --> SM[SceneManager<br/>(Main/Rule/Option/Start/InGame)]
+  BTN[StartButtonHandler] --> SM["SceneManager<br/>Main/Rule/Option<br/>Start/InGame"]
 ```
 
 ## 빠른 시작(Quick Start)
